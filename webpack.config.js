@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => ({
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
@@ -11,7 +11,7 @@ module.exports = (env, argv) => ({
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
@@ -42,5 +42,8 @@ module.exports = (env, argv) => ({
     port: 3000,
     hot: true,
     historyApiFallback: true,
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'], // 引入文件时自动匹配，不用写全路径，比如 index.tsx
   },
 });
