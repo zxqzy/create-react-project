@@ -13,7 +13,7 @@
     "paths": {
       "@/*": ["./*"]          // 配置路径别名（可选）
     },
-    // "types": ["vite/client"]  // 根据构建工具调整
+    "types": ["react"]  // 根据构建工具调整
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
